@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Onedrive Connected!</title>
+</head>
+<body>
+	<input id="code" readonly="readonly" style="box-sizing: border-box; position: fixed; top: 60px; left: 20px; right: 20px; z-index: 999999; padding: 10px; width: 95%; border-radius: 5px; background: rgb(23, 26, 33); color: rgb(184, 182, 180); box-shadow: rgb(0, 0, 0) 0px 0px 20px;" onclick="copy()">
+	Touch to Copy
+	<script type="text/javascript">
+		var box = document.getElementById("code")
+		box.value = document.location.toString().split("?")[1]
+		function copy() {
+			box.setSelectionRange(0, box.value.length);
+			if (document.execCommand('copy')) {
+        		document.execCommand('copy');
+        		window.close();
+    		}
+		}
+	</script>
+</body>
+</html>
